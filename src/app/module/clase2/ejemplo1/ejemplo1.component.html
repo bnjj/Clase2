@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngFor="let item of productos" class="card" style="width: 18rem;">
+
+        <div class="card-body">
+          <h5 class="card-title">{{item.nombre}}</h5>
+          <h5 class="card-title">{{item.precio | currency}}</h5>
+          <h5 class="card-title">{{item.fechaIngreso | date :'dd/MM/YY'}}</h5>
+          <p class="card-text">Tienda SuperCool Envio Gratis</p>
+       </div>
+      </div>
+</div>
+
+<div>
+    {{productos[0] | json}}
+</div>

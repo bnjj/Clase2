@@ -1,0 +1,58 @@
+<div class="container">
+ <div class="row">
+    <div class="col">
+        <form [formGroup]="formUsuario"  >
+            <div class="form-group">
+              <label for="companyName">Empresa de envios.</label>
+              <input type="text"  class="form-control" formControlName="nombre"  placeholder="Nombre de la empresa de envios.">
+                
+              <div *ngIf="formUsuario.get('companyName')?.errors?.['required'] && (formUsuario.get('companyName')?.touched || formUsuario.get('companyName')?.dirty) " class="alert alert-danger">
+                Este campo no puede dejarse vacio.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Telefono (Opcional)</label>
+              <input type="text" class="form-control" formControlName="telefono"  placeholder="0123-3244356-234">
+            </div>
+        
+            <button class="btn btn-primary" [disabled]="this.formUsuario.invalid" (click)="guardar()">Guardar</button>
+          </form>
+          <p>Estado Formulario: {{formUsuario.valid}}</p>
+    </div>
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">CompanyName</th>
+            <th scope="col">Phone</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+         
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+       
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+</div>
+
+
